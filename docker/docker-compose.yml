@@ -1,4 +1,4 @@
-version: "3.1"
+version: "3.5"
 
 services:
 
@@ -6,8 +6,25 @@ services:
     image: postgres:14.2-alpine
     restart: always
     environment:
-      POSTGRES_PASSWORD: root
-      POSTGRES_USER: root
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: crud_db
     ports:
-      - "5432:5432"
+      - "5432:5432" 
+  
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${DB_ADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "8081:80"
+    depends_on:
+      - db
+    networks:
+      - db
+
+networks:
+  db:
+    driver: bridge
+
