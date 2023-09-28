@@ -19,6 +19,7 @@
     npm install class-validator class-transformer
     npm install @nestjs/typeorm typeorm
     npm install @nestjs/config
+    npm install pg 
 
 ### iniciar em nodo dev
     npm run start:dev
