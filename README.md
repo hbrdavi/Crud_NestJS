@@ -15,8 +15,10 @@
 ### criação do projeto
     $ npx nest new Crud_NestJS
 
-### inportação das ferramentas de validação
+### inportação das ferramentas
     npm install class-validator class-transformer
+    npm install @nestjs/typeorm typeorm
+    npm install @nestjs/config
 
 ### iniciar em nodo dev
     npm run start:dev

@@ -6,7 +6,7 @@ import { unicMailValidator } from "./validators/unique-mail.validator";
 @Module({
     imports: [],
     controllers: [UserController],
-    providers: [UserRepository, unicMailValidator],
+    providers: [UserRepository,  unicMailValidator]    
 }
 )
 export class UserModule {
