@@ -11,20 +11,21 @@ services:
       POSTGRES_DB: crud_db
     ports:
       - "5432:5432" 
-  
-  pgadmin:
-    image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: ${DB_ADMIN_EMAIL}
-      PGADMIN_DEFAULT_PASSWORD: ${DB_PASSWORD}
-    ports:
-      - "8081:80"
-    depends_on:
-      - db
-    networks:
-      - db
+## Utilizei o Dbeaver para acessar o banco
+## o pgAdmin não precisa ficar rodando no docker 
+#   pgadmin:
+#     image: dpage/pgadmin4
+#     environment:
+#       PGADMIN_DEFAULT_EMAIL: ${DB_ADMIN_EMAIL}
+#       PGADMIN_DEFAULT_PASSWORD: ${DB_PASSWORD}
+#     ports:
+#       - "8081:80"
+#     depends_on:
+#       - db
+#     networks:
+#       - db
 
-networks:
-  db:
-    driver: bridge
+# networks:
+#   db:
+#     driver: bridge
 

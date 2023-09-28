@@ -5,11 +5,11 @@ export class UserEntity {
 
     @PrimaryGeneratedColumn('uuid')
     id: string;
-    @Column({ name: 'name', length: 100, nullable: false })
+    @Column({ name: 'nome', length: 100, nullable: false })
     nome: string;
     @Column({ name: 'email', length: 70, nullable: false })
     email: string;
-    @Column({ name: 'password', length: 255, nullable: false })
+    @Column({ name: 'senha', length: 255, nullable: false })
     senha: string;
 
     @CreateDateColumn({ name: 'created_at' })
